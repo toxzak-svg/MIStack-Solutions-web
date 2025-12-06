@@ -30,12 +30,13 @@
         .container {
             position: relative;
             z-index: 10; 
-            margin-top: 12vh; 
+            margin-top: 10vh; /* Adjusted slightly to accommodate extra text lines */
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             animation: fadeIn 2.5s ease-out;
+            padding: 0 1rem; /* Ensure text doesn't touch edges on mobile */
         }
 
         /* LOGO */
@@ -65,7 +66,7 @@
             font-weight: 800;
             letter-spacing: -2px;
             line-height: 1;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: #ffffff;
             text-shadow: 0 0 20px rgba(0,0,0,0.8); 
             position: relative;
@@ -77,41 +78,64 @@
             text-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
         }
 
-        /* Subtitle Line */
-        .tagline {
-            font-size: 1.25rem;
+        /* New Tagline Container */
+        .tagline-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            z-index: 12;
+        }
+
+        /* Tagline Line 1: Location */
+        .tagline-loc {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #ffffff; /* Bright white for location */
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            background: rgba(5,5,5,0.4); 
+            padding: 5px 15px;
+            border-radius: 4px;
+            backdrop-filter: blur(2px);
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        /* Tagline Line 2: Description */
+        .tagline-desc {
+            font-size: 1rem;
             font-weight: 300;
             color: #cccccc;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            position: relative;
-            z-index: 12;
+            letter-spacing: 2px;
             background: rgba(5,5,5,0.4); 
             padding: 5px 15px;
             border-radius: 4px;
             backdrop-filter: blur(2px);
         }
 
-        .tagline::after {
+        /* Neon underline attached to the description */
+        .tagline-desc::after {
             content: '';
             display: block;
             width: 60px;
             height: 2px;
             background: #39FF14;
-            margin: 1rem auto 0;
+            margin: 1.5rem auto 0;
             box-shadow: 0 0 8px rgba(57, 255, 20, 0.8);
         }
 
         /* 
            SOCIAL LINKS CONTAINER
-           Centered at bottom, above waves
+           Increased top margin to push it lower
         */
         .social-links {
             display: flex;
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 5rem; /* Pushed lower as requested */
             position: relative;
-            z-index: 15; /* High z-index to be clickable */
+            z-index: 15; 
         }
 
         .social-icon {
@@ -123,7 +147,7 @@
         }
 
         .social-icon:hover {
-            color: #39FF14; /* Neon Green on Hover */
+            color: #39FF14; 
             transform: translateY(-5px) scale(1.1);
             filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.8));
             opacity: 1;
@@ -135,10 +159,7 @@
             fill: currentColor;
         }
 
-        /* 
-           SUBTLE SIGNATURE (ZM)
-           Fixed in bottom right
-        */
+        /* Signature */
         .signature {
             position: fixed;
             bottom: 20px;
@@ -165,7 +186,7 @@
             margin-bottom: 2px;
         }
 
-        /* METALLIC WAVES CONTAINER */
+        /* METALLIC WAVES */
         .waves-box {
             position: absolute;
             bottom: 0;
@@ -229,11 +250,12 @@
         /* Mobile */
         @media (max-width: 768px) {
             .brand-title { font-size: 3.5rem; }
-            .tagline { font-size: 0.8rem; letter-spacing: 2px; }
+            .tagline-loc { font-size: 1rem; letter-spacing: 3px; }
+            .tagline-desc { font-size: 0.8rem; letter-spacing: 1px; max-width: 90%; margin: 0 auto; line-height: 1.4; }
             .logo-icon { width: 120px; height: 120px; }
             .waves-box { height: 50vh; }
-            .container { margin-top: 12vh; }
-            .social-links { gap: 1.5rem; margin-top: 2rem; }
+            .container { margin-top: 10vh; }
+            .social-links { gap: 1.5rem; margin-top: 4rem; }
             .signature { bottom: 10px; right: 15px; font-size: 0.7rem; }
         }
     </style>
@@ -280,9 +302,14 @@
     <div class="container">
         <div class="logo-icon"></div>
         <h1 class="brand-title"><span>MI</span>Dev</h1>
-        <p class="tagline">Michigan based full stack development</p>
+        
+        <!-- Two-Line Tagline -->
+        <div class="tagline-wrapper">
+            <p class="tagline-loc">Michigan, USA</p>
+            <p class="tagline-desc">Freelance Full Stack Web Development and Software Design</p>
+        </div>
 
-        <!-- SOCIAL LINKS -->
+        <!-- SOCIAL LINKS (Lowered) -->
         <div class="social-links">
             <!-- GitHub -->
             <a href="https://github.com/toxzak-svg" target="_blank" class="social-icon" aria-label="GitHub">
