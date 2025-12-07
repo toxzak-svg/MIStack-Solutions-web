@@ -36,40 +36,42 @@
             padding: 4rem 1rem;
         }
 
-        /* Navigation Bar */
+        /* Navigation Bar - Hidden */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(5, 5, 5, 0.98);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 2rem;
-            border-bottom: 1px solid rgba(57, 255, 20, 0.3);
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
+            display: none;
         }
 
-        nav a {
+        /* Back Navigation Button */
+        .back-nav {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 2rem;
+            z-index: 100;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .back-nav a {
             color: #39FF14;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.8rem 2.5rem;
+            border: 2px solid rgba(57, 255, 20, 0.4);
+            border-radius: 6px;
             transition: all 0.3s ease;
-            padding: 0.5rem 1.5rem;
-            border: 1px solid transparent;
-            border-radius: 4px;
+            background: rgba(5, 5, 5, 0.9);
+            backdrop-filter: blur(10px);
         }
 
-        nav a:hover {
+        .back-nav a:hover {
             border-color: #39FF14;
-            text-shadow: 0 0 10px rgba(57, 255, 20, 0.8);
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
-        }
-
-        nav a.active {
-            border-color: #39FF14;
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+            background: rgba(57, 255, 20, 0.1);
+            transform: translateY(-2px);
         }
 
         /* Page Title */
@@ -278,6 +280,12 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="back-nav">
+        <a href="index.html">← Home</a>
+        <a href="projects.html">Active Projects →</a>
     </div>
 </body>
 </html>

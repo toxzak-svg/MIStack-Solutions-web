@@ -283,6 +283,34 @@
             box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
         }
 
+        /* Page Navigation Buttons */
+        .page-nav-buttons {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .page-nav-buttons a {
+            color: #39FF14;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.8rem 2.5rem;
+            border: 2px solid rgba(57, 255, 20, 0.4);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            background: rgba(57, 255, 20, 0.05);
+        }
+
+        .page-nav-buttons a:hover {
+            border-color: #39FF14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+            background: rgba(57, 255, 20, 0.1);
+            transform: translateY(-2px);
+        }
+
         /* Mobile */
         @media (max-width: 768px) {
             .brand-title { font-size: 3.5rem; }
@@ -334,13 +362,6 @@
         </svg>
     </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="index.html" class="active">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="projects.html">Projects</a>
-    </nav>
-
     <!-- Main Content -->
     <div class="container">
         <div class="logo-icon"></div>
@@ -381,6 +402,12 @@
                     <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.105V5.383zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741zM1 11.105l4.708-2.897L1 5.383v5.722z"/>
                 </svg>
             </a>
+        </div>
+
+        <!-- Page Navigation Buttons -->
+        <div class="page-nav-buttons">
+            <a href="portfolio.html">Portfolio</a>
+            <a href="projects.html">Active Projects</a>
         </div>
 
     </div>
