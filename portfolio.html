@@ -36,33 +36,40 @@
             padding: 4rem 1rem;
         }
 
-        /* Navigation */
+        /* Navigation Bar */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(5, 5, 5, 0.95);
+            background: rgba(5, 5, 5, 0.98);
             backdrop-filter: blur(10px);
-            z-index: 100;
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(57, 255, 20, 0.3);
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
         }
 
         nav a {
             color: #39FF14;
             text-decoration: none;
-            margin: 0 1.5rem;
             font-weight: 500;
             transition: all 0.3s ease;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid transparent;
+            border-radius: 4px;
         }
 
         nav a:hover {
+            border-color: #39FF14;
             text-shadow: 0 0 10px rgba(57, 255, 20, 0.8);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
         }
 
-        nav a.home-link {
-            font-size: 1.5rem;
-            margin-right: 3rem;
+        nav a.active {
+            border-color: #39FF14;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
         }
 
         /* Page Title */
@@ -200,18 +207,15 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <a href="index.html" class="home-link">← MIDev</a>
         <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
         <a href="projects.html">Projects</a>
     </nav>
 
     <!-- Main Content -->
     <div class="container">
-        <a href="index.html" class="back-button">← Back to Home</a>
-        
-        <h1 class="page-title">Our <span>Portfolio</span></h1>
-        <p class="subtitle">A showcase of our recent work and success stories</p>
+    <div class="container">
+        <h1 class="page-title">Our <span>Portfolio</span></h1>success stories</p>
 
         <div class="portfolio-grid">
             <div class="portfolio-item">
