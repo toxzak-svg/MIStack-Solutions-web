@@ -1,3 +1,3 @@
 # MIDev
-Michugan based full stack development. 
+Michigan based full stack development. 
 Zachary Maronek 
