@@ -76,76 +76,127 @@
 
         /* Page Title */
         .page-title {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 800;
             letter-spacing: -2px;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             color: #ffffff;
-            text-shadow: 0 0 20px rgba(0,0,0,0.8);
+            text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
             margin-top: 5rem;
         }
 
         .page-title span {
             color: #39FF14;
-            text-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
+            text-shadow: 0 0 40px rgba(57, 255, 20, 0.6);
         }
 
         .subtitle {
-            font-size: 1.2rem;
-            color: #a0a0a0;
+            font-size: 1.1rem;
+            color: #808080;
             margin-bottom: 3rem;
+            font-weight: 400;
         }
 
         /* Portfolio Grid */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
 
         .portfolio-item {
-            background: linear-gradient(135deg, rgba(57, 255, 20, 0.1) 0%, rgba(57, 255, 20, 0.05) 100%);
-            border: 1px solid rgba(57, 255, 20, 0.3);
-            border-radius: 8px;
+            background: linear-gradient(145deg, rgba(10, 15, 30, 0.9), rgba(5, 10, 20, 0.95));
+            border: 1px solid rgba(57, 255, 20, 0.15);
+            border-radius: 12px;
             padding: 2rem;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #39FF14, transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .portfolio-item:hover::before {
+            opacity: 1;
         }
 
         .portfolio-item:hover {
-            border-color: #39FF14;
-            transform: translateY(-10px);
-            box-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
+            border-color: rgba(57, 255, 20, 0.4);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 10px 40px rgba(57, 255, 20, 0.15),
+                0 0 80px rgba(57, 255, 20, 0.05),
+                inset 0 0 20px rgba(57, 255, 20, 0.02);
+            background: linear-gradient(145deg, rgba(15, 20, 35, 0.95), rgba(8, 12, 25, 0.98));
         }
 
         .portfolio-item h3 {
             color: #39FF14;
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .portfolio-item p {
-            color: #a0a0a0;
-            line-height: 1.6;
-            margin-bottom: 1rem;
+            color: #b0b0b0;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
 
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-            margin-top: 1rem;
+            gap: 0.6rem;
+            justify-content: flex-start;
+            margin-bottom: 1.5rem;
         }
 
         .tech-tag {
-            background: rgba(57, 255, 20, 0.15);
+            background: rgba(57, 255, 20, 0.08);
             color: #39FF14;
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
             border: 1px solid rgba(57, 255, 20, 0.2);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: rgba(57, 255, 20, 0.15);
+            border-color: rgba(57, 255, 20, 0.4);
+        }
+
+        .portfolio-item a {
+            color: #39FF14;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .portfolio-item a:hover {
+            gap: 0.8rem;
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
         }
 
         /* Back Button */
