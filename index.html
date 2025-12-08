@@ -213,133 +213,7 @@
             margin-bottom: 2px;
         }
 
-        /* RACING LINES ANIMATION */
-        .racing-lines {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-            overflow: hidden;
-        }
 
-        /* Metallic liquid wave overlay */
-        .racing-lines::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: 
-                linear-gradient(45deg, 
-                    transparent 30%, 
-                    rgba(0, 212, 255, 0.05) 40%, 
-                    rgba(100, 200, 255, 0.08) 50%, 
-                    rgba(0, 212, 255, 0.05) 60%, 
-                    transparent 70%);
-            animation: liquidWave 12s ease-in-out infinite;
-            opacity: 0.7;
-        }
-
-        .racing-lines::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(ellipse at center, 
-                    transparent 20%, 
-                    rgba(0, 150, 200, 0.04) 40%, 
-                    rgba(0, 212, 255, 0.06) 50%, 
-                    transparent 80%);
-            animation: liquidWave 18s ease-in-out infinite reverse;
-            opacity: 0.5;
-        }
-
-        @keyframes liquidWave {
-            0%, 100% { 
-                transform: translate(0, 0) rotate(0deg);
-                opacity: 0.7;
-            }
-            25% { 
-                transform: translate(10%, 10%) rotate(90deg);
-                opacity: 0.5;
-            }
-            50% { 
-                transform: translate(0, 20%) rotate(180deg);
-                opacity: 0.8;
-            }
-            75% { 
-                transform: translate(-10%, 10%) rotate(270deg);
-                opacity: 0.6;
-            }
-        }
-
-        .racing-line {
-            position: absolute;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.8), transparent);
-            animation: raceLine 3s linear infinite;
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-            z-index: 2;
-        }
-
-        .racing-line:nth-child(1) {
-            top: 20%;
-            width: 30%;
-            animation-delay: 0s;
-            animation-duration: 4s;
-        }
-
-        .racing-line:nth-child(2) {
-            top: 35%;
-            width: 40%;
-            animation-delay: 0.8s;
-            animation-duration: 3.5s;
-        }
-
-        .racing-line:nth-child(3) {
-            top: 50%;
-            width: 25%;
-            animation-delay: 1.6s;
-            animation-duration: 4.2s;
-        }
-
-        .racing-line:nth-child(4) {
-            top: 65%;
-            width: 35%;
-            animation-delay: 2.4s;
-            animation-duration: 3.8s;
-        }
-
-        .racing-line:nth-child(5) {
-            top: 80%;
-            width: 45%;
-            animation-delay: 3.2s;
-            animation-duration: 4.5s;
-        }
-
-        @keyframes raceLine {
-            0% {
-                left: -50%;
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                left: 100%;
-                opacity: 0;
-            }
-        }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -384,13 +258,13 @@
             border: 2px solid rgba(0, 212, 255, 0.4);
             border-radius: 6px;
             transition: all 0.3s ease;
-            background: rgba(0, 212, 255, 0.05);
+            background: transparent;
         }
 
         .page-nav-buttons a:hover {
             border-color: #00d4ff;
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
-            background: rgba(0, 212, 255, 0.1);
+            background: transparent;
             transform: translateY(-2px);
         }
 
@@ -408,14 +282,7 @@
 </head>
 <body>
 
-    <!-- RACING LINES ANIMATION -->
-    <div class="racing-lines">
-        <div class="racing-line"></div>
-        <div class="racing-line"></div>
-        <div class="racing-line"></div>
-        <div class="racing-line"></div>
-        <div class="racing-line"></div>
-    </div>
+
 
     <!-- Main Content -->
     <div class="container">
