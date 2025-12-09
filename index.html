@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIDev - Michigan Full Stack Development</title>
     <style>
+        :root{
+            --accent: #39FF14;
+            --page-bg: #050505;
+            --text-main: #e6e6e6;
+            --muted-text: #bfcfc0;
+        }
         /* Reset and Base Styles */
         * {
             margin: 0;
@@ -82,28 +88,28 @@
         /* Tagline Line 1: Location */
         .tagline-loc {
             font-size: 1.2rem;
-            font-weight: 500;
-            color: #ffffff; /* Bright white for location */
+            font-weight: 600;
+            color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 4px;
-            background: rgba(5,5,5,0.4); 
-            padding: 5px 15px;
-            border-radius: 4px;
-            backdrop-filter: blur(2px);
-            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+            background: none; /* removed translucent rectangle */
+            padding: 0;
+            border-radius: 0;
+            backdrop-filter: none;
+            text-shadow: none;
         }
 
         /* Tagline Line 2: Description */
         .tagline-desc {
             font-size: 1rem;
             font-weight: 300;
-            color: #cccccc;
+            color: var(--muted-text);
             text-transform: uppercase;
             letter-spacing: 2px;
-            background: rgba(5,5,5,0.4); 
-            padding: 5px 15px;
-            border-radius: 4px;
-            backdrop-filter: blur(2px);
+            background: none; /* removed translucent rectangle */
+            padding: 0;
+            border-radius: 0;
+            backdrop-filter: none;
         }
 
         /* Neon underline attached to the description */
@@ -112,9 +118,9 @@
             display: block;
             width: 60px;
             height: 2px;
-            background: #39FF14;
-            margin: 1.5rem auto 0;
-            box-shadow: 0 0 8px rgba(57, 255, 20, 0.8);
+            background: var(--accent);
+            margin: 1rem auto 0;
+            box-shadow: 0 0 6px rgba(57, 255, 20, 0.6);
         }
 
         /* 
