@@ -48,9 +48,9 @@
 
         /* LOGO */
         .logo-icon {
-            /* responsive, large logo */
-            width: min(72vw, 1100px);
-            max-width: 1100px;
+            /* much larger logo (approx. twice previous) */
+            width: min(90vw, 2200px);
+            max-width: 2200px;
             height: auto;
             display: block;
             margin-bottom: 2rem;
@@ -202,7 +202,8 @@
 
         /* Wave Animations */
         .parallax > use {
-            animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+            /* waves animation removed - static waves */
+            animation: none !important;
         }
         
         .parallax > use:nth-child(1) {
@@ -250,7 +251,7 @@
             .brand-title { font-size: 3rem; }
             .tagline-loc { font-size: 1rem; letter-spacing: 3px; }
             .tagline-desc { font-size: 0.8rem; letter-spacing: 1px; max-width: 90%; margin: 0 auto; line-height: 1.4; }
-            .logo-icon { width: 90vw; max-width: 420px; height: auto; }
+            .logo-icon { width: 95vw; max-width: 840px; height: auto; }
             .waves-box { height: 50vh; }
             .container { margin-top: 4vh; }
             .social-links { gap: 1.5rem; margin-top: 4rem; }
