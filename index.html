@@ -39,7 +39,7 @@
         .container {
             position: relative;
             z-index: 10; 
-            margin-top: 6vh; /* reduced to accommodate a larger logo */
+            margin-top: 5.4vh; /* slightly reduced to match scale */
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -50,12 +50,12 @@
 
         /* LOGO */
         .logo-icon {
-            /* slightly smaller now: reduced max widths by ~30px */
-            width: min(90vw, 2185px);
-            max-width: 2185px;
+            /* globally scaled down ~10% from previous sizes */
+            width: min(90vw, 1967px);
+            max-width: 1967px;
             height: auto;
             display: block;
-            margin-bottom: 2rem;
+            margin-bottom: 1.8rem;
             object-fit: contain;
             /* soft blue-green glow */
             box-shadow: 0 18px 60px rgba(var(--accent2-rgb), 0.08), inset 0 0 40px rgba(var(--accent2-rgb), 0.03);
@@ -66,18 +66,18 @@
         /* Desktop: set explicit pixel width slightly smaller */
         @media (min-width: 769px) {
             .logo-icon {
-                width: 1115px; /* reduced by 30px */
-                max-width: 1115px;
+                width: 1004px; /* ~10% smaller */
+                max-width: 1004px;
             }
         }
 
         /* Stylized Title */
         .brand-title {
-            font-size: 3.8rem;
+            font-size: 3.42rem; /* 10% smaller */
             font-weight: 800;
             letter-spacing: -2px;
             line-height: 1;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.35rem;
             color: #ffffff;
             text-shadow: 0 0 20px rgba(0,0,0,0.8); 
             position: relative;
@@ -101,7 +101,7 @@
 
         /* Tagline Line 1: Location */
         .tagline-loc {
-            font-size: 1.1rem;
+            font-size: 0.99rem; /* 10% smaller */
             font-weight: 600;
                 color: #ffffff;
             text-transform: uppercase;
@@ -115,7 +115,7 @@
 
         /* Tagline Line 2: Description */
         .tagline-desc {
-            font-size: 0.95rem;
+            font-size: 0.855rem; /* 10% smaller */
             font-weight: 300;
                 color: #ffffff;
             text-transform: uppercase;
@@ -144,15 +144,15 @@
         .social-links {
             display: flex;
             gap: 2rem;
-            margin-top: 5rem; /* Pushed lower as requested */
+            margin-top: 4.5rem; /* slightly reduced to match scale */
             position: relative;
             z-index: 15; 
         }
 
         .social-icon {
             color: #ffffff;
-            width: 30px;
-            height: 30px;
+            width: 27px; /* 10% smaller */
+            height: 27px;
             transition: all 0.3s ease;
             opacity: 0.9;
         }
@@ -178,7 +178,7 @@
             z-index: 15;
             text-align: right;
             opacity: 0.4;
-            font-size: 0.75rem;
+            font-size: 0.675rem; /* 10% smaller */
             color: #ffffff;
             letter-spacing: 2px;
             transition: opacity 0.3s ease;
@@ -193,7 +193,7 @@
         .signature span {
             display: block;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.855rem; /* 10% smaller */
             margin-bottom: 2px;
         }
 
@@ -203,15 +203,15 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 55vh;
+            height: 60vh; /* slightly taller to avoid clipping */
             z-index: 1;
             pointer-events: none;
-            overflow: hidden;
+            overflow: visible; /* allow wave tips to extend */
         }
 
         .waves-svg {
             width: 100%;
-            height: 100%;
+            height: 110%; /* give extra vertical room */
             display: block;
         }
 
@@ -259,20 +259,20 @@
 
             @keyframes rise-fall {
                 0% { transform: translateY(0); }
-                50% { transform: translateY(-18px); }
+                50% { transform: translateY(-16px); }
                 100% { transform: translateY(0); }
             }
 
         /* Mobile */
         @media (max-width: 768px) {
-            .brand-title { font-size: 2.9rem; }
-            .tagline-loc { font-size: 0.98rem; letter-spacing: 3px; }
-            .tagline-desc { font-size: 0.76rem; letter-spacing: 1px; max-width: 90%; margin: 0 auto; line-height: 1.4; }
-            .logo-icon { width: 95vw; max-width: 875px; height: auto; }
-            .waves-box { height: 50vh; }
+            .brand-title { font-size: 2.61rem; }
+            .tagline-loc { font-size: 0.882rem; letter-spacing: 3px; }
+            .tagline-desc { font-size: 0.684rem; letter-spacing: 1px; max-width: 90%; margin: 0 auto; line-height: 1.4; }
+            .logo-icon { width: 86vw; max-width: 788px; height: auto; }
+            .waves-box { height: 55vh; }
             .container { margin-top: 4vh; }
             .social-links { gap: 1.5rem; margin-top: 4rem; }
-            .signature { bottom: 10px; right: 15px; font-size: 0.68rem; }
+            .signature { bottom: 10px; right: 15px; font-size: 0.612rem; }
         }
     </style>
 </head>
@@ -281,7 +281,7 @@
     <!-- FLUID METALLIC WAVES -->
     <div class="waves-box">
         <svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        viewBox="0 0 150 44" preserveAspectRatio="none" shape-rendering="auto">
             <defs>
                 <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
                 <!-- Blue-Green Gradients -->
