@@ -6,8 +6,10 @@
     <title>MIDev - Michigan Full Stack Development</title>
     <style>
         :root{
-            --accent: #585f53; /* sampled from logo */
+            --accent: #585f53; /* sampled from logo (olive) */
             --accent-rgb: 88,95,83;
+            --accent2: #1bdff7; /* blue-green sampled variant for waves/glow */
+            --accent2-rgb: 27,223,247;
             --page-bg: #050505;
             --text-main: #e6e6e0;
             --muted-text: #6c6f6a; /* desaturated variant */
@@ -55,6 +57,9 @@
             display: block;
             margin-bottom: 2rem;
             object-fit: contain;
+            /* soft blue-green glow */
+            box-shadow: 0 18px 60px rgba(var(--accent2-rgb), 0.08), inset 0 0 40px rgba(var(--accent2-rgb), 0.03);
+            filter: drop-shadow(0 12px 30px rgba(var(--accent2-rgb), 0.08));
             animation: floatLogo 6s ease-in-out infinite;
         }
 
@@ -203,6 +208,44 @@
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
+        
+            /* Wave Animations - vertical rise/fall parallax */
+            .parallax > use {
+                animation: rise-fall 6s ease-in-out infinite;
+                transform-origin: center;
+            }
+
+            .parallax > use:nth-child(1) {
+                animation-duration: 7s;
+                animation-delay: -1s;
+                fill: url(#bg-wave-1);
+                opacity: 0.65;
+            }
+            .parallax > use:nth-child(2) {
+                animation-duration: 9s;
+                animation-delay: -2s;
+                fill: url(#bg-wave-2);
+                opacity: 0.5;
+                transform: translateZ(0);
+            }
+            .parallax > use:nth-child(3) {
+                animation-duration: 11s;
+                animation-delay: -3s;
+                fill: url(#bg-wave-1);
+                opacity: 0.35;
+            }
+            .parallax > use:nth-child(4) {
+                animation-duration: 13s;
+                animation-delay: -4s;
+                fill: url(#bg-wave-2);
+                opacity: 0.85;
+            }
+
+            @keyframes rise-fall {
+                0% { transform: translateY(0); }
+                50% { transform: translateY(-18px); }
+                100% { transform: translateY(0); }
+            }
 
         /* Mobile */
         @media (max-width: 768px) {
@@ -219,7 +262,32 @@
 </head>
 <body>
 
-    <!-- Waves removed -->
+    <!-- FLUID METALLIC WAVES -->
+    <div class="waves-box">
+        <svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                <!-- Blue-Green Gradients -->
+                <linearGradient id="bg-wave-1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:var(--accent2); stop-opacity:0.18" />
+                    <stop offset="50%" style="stop-color:#ffffff; stop-opacity:0.06" />
+                    <stop offset="100%" style="stop-color:var(--accent2); stop-opacity:0.12" />
+                </linearGradient>
+                <linearGradient id="bg-wave-2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#09343a; stop-opacity:0.9" />
+                    <stop offset="50%" style="stop-color:var(--accent2); stop-opacity:0.24" />
+                    <stop offset="100%" style="stop-color:#09343a; stop-opacity:0.9" />
+                </linearGradient>
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" />
+                <use xlink:href="#gentle-wave" x="48" y="3" />
+                <use xlink:href="#gentle-wave" x="48" y="5" />
+                <use xlink:href="#gentle-wave" x="48" y="7" />
+            </g>
+        </svg>
+    </div>
 
     <!-- Main Content -->
     <div class="container">
