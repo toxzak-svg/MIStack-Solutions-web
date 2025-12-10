@@ -50,9 +50,9 @@
 
         /* LOGO */
         .logo-icon {
-            /* slightly larger logo (+15px to max widths) */
-            width: min(90vw, 2215px);
-            max-width: 2215px;
+            /* slightly smaller now: reduced max widths by ~30px */
+            width: min(90vw, 2185px);
+            max-width: 2185px;
             height: auto;
             display: block;
             margin-bottom: 2rem;
@@ -63,17 +63,17 @@
             animation: floatLogo 6s ease-in-out infinite;
         }
 
-        /* Desktop: set explicit pixel width based on source image + 15px */
+        /* Desktop: set explicit pixel width slightly smaller */
         @media (min-width: 769px) {
             .logo-icon {
-                width: 1145px; /* explicit width increased by 50px from 1095px */
-                max-width: 1145px;
+                width: 1115px; /* reduced by 30px */
+                max-width: 1115px;
             }
         }
 
         /* Stylized Title */
         .brand-title {
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 800;
             letter-spacing: -2px;
             line-height: 1;
@@ -101,7 +101,7 @@
 
         /* Tagline Line 1: Location */
         .tagline-loc {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
                 color: #ffffff;
             text-transform: uppercase;
@@ -115,7 +115,7 @@
 
         /* Tagline Line 2: Description */
         .tagline-desc {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 300;
                 color: #ffffff;
             text-transform: uppercase;
@@ -130,7 +130,7 @@
         .tagline-desc::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 54px;
             height: 2px;
             background: var(--accent);
             margin: 1rem auto 0;
@@ -151,8 +151,8 @@
 
         .social-icon {
             color: #ffffff;
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             transition: all 0.3s ease;
             opacity: 0.9;
         }
@@ -178,7 +178,7 @@
             z-index: 15;
             text-align: right;
             opacity: 0.4;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #ffffff;
             letter-spacing: 2px;
             transition: opacity 0.3s ease;
@@ -193,7 +193,7 @@
         .signature span {
             display: block;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 2px;
         }
 
@@ -265,14 +265,14 @@
 
         /* Mobile */
         @media (max-width: 768px) {
-            .brand-title { font-size: 3rem; }
-            .tagline-loc { font-size: 1rem; letter-spacing: 3px; }
-            .tagline-desc { font-size: 0.8rem; letter-spacing: 1px; max-width: 90%; margin: 0 auto; line-height: 1.4; }
-            .logo-icon { width: 95vw; max-width: 905px; height: auto; }
+            .brand-title { font-size: 2.9rem; }
+            .tagline-loc { font-size: 0.98rem; letter-spacing: 3px; }
+            .tagline-desc { font-size: 0.76rem; letter-spacing: 1px; max-width: 90%; margin: 0 auto; line-height: 1.4; }
+            .logo-icon { width: 95vw; max-width: 875px; height: auto; }
             .waves-box { height: 50vh; }
             .container { margin-top: 4vh; }
             .social-links { gap: 1.5rem; margin-top: 4rem; }
-            .signature { bottom: 10px; right: 15px; font-size: 0.7rem; }
+            .signature { bottom: 10px; right: 15px; font-size: 0.68rem; }
         }
     </style>
 </head>
