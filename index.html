@@ -64,36 +64,65 @@
 			flex-wrap: wrap;
 			justify-content: center;
 		}
-		.main-btn, .social-btn {
+		.social-btn {
 			display: flex;
 			align-items: center;
-			gap: 8px;
-			padding: 12px 22px;
+			justify-content: center;
+			font-size: 1.35rem;
+			padding: 10px 18px;
 			border: none;
 			border-radius: 8px;
-			font-size: 1.1rem;
-			font-weight: 600;
 			cursor: pointer;
-			background: #00e6ff;
-			color: #181c20;
 			text-decoration: none;
 			transition: background 0.18s, color 0.18s, box-shadow 0.18s;
 			box-shadow: 0 2px 8px rgba(0,230,255,0.08);
+			font-weight: 600;
 		}
-		.main-btn:hover, .social-btn:hover {
-			background: #00b3c6;
-			color: #fff;
-		}
-		.social-btn {
+		.social-btn.email {
 			background: #23272b;
 			color: #00e6ff;
-			font-size: 1.2rem;
-			padding: 10px 18px;
 		}
-		.social-btn.github:hover { background: #24292e; color: #fff; }
-		.social-btn.facebook:hover { background: #1877f3; color: #fff; }
-		.social-btn.telegram:hover { background: #229ed9; color: #fff; }
-		.social-btn.discord:hover { background: #5865f2; color: #fff; }
+		.social-btn.email:hover {
+			background: #00e6ff;
+			color: #181c20;
+		}
+		.social-btn.github {
+			background: #181c20;
+			color: #fff;
+		}
+		.social-btn.github:hover {
+			background: #24292e;
+			color: #00e6ff;
+		}
+		.social-btn.facebook {
+			background: #1877f3;
+			color: #fff;
+		}
+		.social-btn.facebook:hover {
+			background: #fff;
+			color: #1877f3;
+		}
+		.social-btn.telegram {
+			background: #229ed9;
+			color: #fff;
+		}
+		.social-btn.telegram:hover {
+			background: #fff;
+			color: #229ed9;
+		}
+		.social-btn.discord {
+			background: #5865f2;
+			color: #fff;
+		}
+		.social-btn.discord:hover {
+			background: #fff;
+			color: #5865f2;
+		}
+		/* Alternate color style */
+		.social-btn.alt {
+			filter: brightness(0.92) contrast(1.15) saturate(1.2);
+			box-shadow: 0 2px 8px rgba(0,230,255,0.13);
+		}
 		.portfolio-btn {
 			margin-top: 18px;
 			background: #fff;
@@ -124,10 +153,10 @@
 	<div class="center-box">
 		<img src="milogo.png" alt="MIStack Solutions Logo" class="logo">
 		<div class="button-row">
-			<a href="mailto:your.email@example.com" class="main-btn"><i class="fa-solid fa-envelope"></i> Contact</a>
-			<a href="https://github.com/yourgithub" class="social-btn github" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+			<a href="mailto:your.email@example.com" class="social-btn email"><i class="fa-solid fa-envelope"></i></a>
+			<a href="https://github.com/yourgithub" class="social-btn github alt" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
 			<a href="https://facebook.com/yourfacebook" class="social-btn facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-			<a href="https://t.me/yourtelegram" class="social-btn telegram" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+			<a href="https://t.me/yourtelegram" class="social-btn telegram alt" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
 			<a href="https://discord.com/users/yourdiscordid" class="social-btn discord" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
 		</div>
 		<a href="portfolio.html" class="portfolio-btn">Portfolio</a>
