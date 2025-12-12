@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>MIStack Solutions</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	<style>
 		body {
 			margin: 0;
@@ -145,6 +146,38 @@
 			.logo { width: 184px; }
 			.main-btn, .social-btn, .portfolio-btn { font-size: 1rem; padding: 10px 12px; }
 		}
+		.signature {
+			position: fixed;
+			right: 32px;
+			bottom: 24px;
+			z-index: 10;
+			text-align: right;
+			color: #00e6ff;
+			opacity: 0.85;
+			pointer-events: none;
+			user-select: none;
+		}
+		.signature .sig-initials {
+			font-family: 'Pacifico', cursive;
+			font-size: 2.2rem;
+			letter-spacing: 2px;
+			line-height: 1;
+			color: #00e6ff;
+			text-shadow: 0 2px 8px #101217, 0 1px 0 #fff2;
+		}
+		.signature .sig-name {
+			font-family: 'Roboto', Arial, sans-serif;
+			font-size: 1.05rem;
+			color: #b0eaff;
+			letter-spacing: 1px;
+			margin-top: -2px;
+			display: block;
+		}
+		@media (max-width: 600px) {
+			.signature { right: 10px; bottom: 8px; }
+			.signature .sig-initials { font-size: 1.2rem; }
+			.signature .sig-name { font-size: 0.7rem; }
+		}
 	</style>
 	<!-- Font Awesome for icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -153,13 +186,17 @@
 	<div class="center-box">
 		<img src="milogo.png" alt="MIStack Solutions Logo" class="logo">
 		<div class="button-row">
-			<a href="mailto:your.email@example.com" class="social-btn email"><i class="fa-solid fa-envelope"></i></a>
-			<a href="https://github.com/yourgithub" class="social-btn github alt" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-			<a href="https://facebook.com/yourfacebook" class="social-btn facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-			<a href="https://t.me/yourtelegram" class="social-btn telegram alt" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+			<a href="mailto:zwmaronek@gmail.com" class="social-btn email"><i class="fa-solid fa-envelope"></i></a>
+			<a href="https://github.com/toxzak-svg/" class="social-btn github alt" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+			<a href="https://www.facebook.com/zwmaronek" class="social-btn facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+			<a href="https://t.me/ton0fun" class="social-btn telegram alt" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
 			<a href="https://discord.com/users/yourdiscordid" class="social-btn discord" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
 		</div>
 		<a href="portfolio.html" class="portfolio-btn">Portfolio</a>
 	</div>
 </body>
+	<div class="signature">
+		<div class="sig-initials">ZM</div>
+		<span class="sig-name">Zachary Maronek</span>
+	</div>
 </html>
