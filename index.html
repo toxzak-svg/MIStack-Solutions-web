@@ -54,7 +54,7 @@
 			backdrop-filter: blur(8px) saturate(120%);
 		}
 		.logo {
-			width: 310px;
+			width: 332px;
 			max-width: 98vw;
 			margin-bottom: 18px;
 			transition: width 0.2s;
@@ -136,24 +136,25 @@
 			text-decoration: none;
 			transition: background 0.18s, color 0.18s, border 0.18s;
 		}
+		.portfolio-btn {
+			margin-top: 18px;
+			background: linear-gradient(90deg, #00e6ff 0%, #229ed9 100%);
+			color: #101217;
+			border: 2px solid #229ed9;
+			font-size: 1.1rem;
+			font-weight: 700;
+			padding: 12px 32px;
+			border-radius: 8px;
+			text-decoration: none;
+			transition: background 0.18s, color 0.18s, border 0.18s;
+			z-index: 2;
+			box-shadow: 0 2px 12px rgba(0,230,255,0.10);
+		}
 		.portfolio-btn:hover {
-			background: #00e6ff;
-			color: #181c20;
-			border: 2px solid #fff;
+			background: #229ed9;
+			color: #fff;
+			border: 2px solid #00e6ff;
 		}
-		@media (max-width: 600px) {
-			.center-box { padding: 24px 6vw 24px 6vw; }
-			.logo { width: 184px; }
-			.main-btn, .social-btn, .portfolio-btn { font-size: 1rem; padding: 10px 12px; }
-		}
-		.signature {
-			position: fixed;
-			right: 32px;
-			bottom: 24px;
-			z-index: 10;
-			text-align: right;
-			color: #00e6ff;
-			opacity: 0.45;
 			pointer-events: none;
 			user-select: none;
 		}
