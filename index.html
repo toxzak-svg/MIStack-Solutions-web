@@ -8,6 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	<style>
+		/* Reset & base */
 		body {
 			margin: 0;
 			min-height: 100vh;
@@ -16,10 +17,11 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			background: #101217;
+			background: #0f1112;
 			position: relative;
 			overflow: hidden;
 		}
+		/* Background texture (SVG) */
 		body::before {
 			content: '';
 			position: fixed;
@@ -29,18 +31,34 @@
 			height: 100vh;
 			z-index: 0;
 			pointer-events: none;
+			background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" y1="0" x2="1440" y2="900"><stop offset="0%25" stop-color="%2300181c" stop-opacity="1"/><stop offset="100%25" stop-color="%23001017" stop-opacity="1"/></linearGradient></defs><rect width="1440" height="900" fill="url(%23g)"/><path d="M0 200 L400 160 L800 220 L1200 140 L1440 180 L1440 0 L0 0 Z" fill="%2300e6ff" fill-opacity="0.03"/><path d="M0 700 L360 640 L720 700 L1080 640 L1440 700 L1440 900 L0 900 Z" fill="%2300e6ff" fill-opacity="0.025"/></svg>') center/cover no-repeat;
 			opacity: 1;
-			background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sharp1" x1="0" y1="0" x2="1440" y2="900" gradientUnits="userSpaceOnUse"><stop stop-color="%2300e6ff" stop-opacity="0.10"/><stop offset="1" stop-color="%23101217" stop-opacity="0.8"/></linearGradient></defs><polygon points="0,0 1440,0 1440,200 0,400" fill="url(%23sharp1)"/><polygon points="0,600 1440,400 1440,900 0,900" fill="%2300e6ff" fill-opacity="0.04"/><polygon points="0,700 1440,600 1440,900 0,900" fill="%2300e6ff" fill-opacity="0.07"/><polygon points="0,300 1440,100 1440,200 0,400" fill="%2300e6ff" fill-opacity="0.09"/></svg>');
+		}
+		/* Center card */
+		.center-box {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 28px;
+			background: rgba(20,24,28,0.55);
+			border-radius: 14px;
+			padding: 44px 28px;
+			box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+			position: relative;
+			z-index: 1;
+			backdrop-filter: blur(6px) saturate(110%);
+			max-width: 92vw;
 		}
 		.logo {
 			width: 332px;
-			max-width: 98vw;
-			margin-bottom: 18px;
-			transition: width 0.2s;
+			max-width: 92vw;
+			margin-bottom: 8px;
+			transition: width 0.18s ease;
 		}
 		.button-row {
 			display: flex;
-			gap: 18px;
+			gap: 14px;
 			flex-wrap: wrap;
 			justify-content: center;
 		}
@@ -48,100 +66,34 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			font-size: 1.35rem;
-			padding: 10px 18px;
+			font-size: 1.25rem;
+			padding: 10px 16px;
 			border: none;
 			border-radius: 8px;
 			cursor: pointer;
 			text-decoration: none;
-			transition: background 0.18s, color 0.18s, box-shadow 0.18s;
-			box-shadow: 0 2px 8px rgba(0,230,255,0.08);
+			transition: transform 0.12s ease, box-shadow 0.18s;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.35);
 			font-weight: 600;
 		}
-		.social-btn.email {
-			background: #23272b;
-			color: #00e6ff;
-		}
-		.social-btn.email:hover {
-			background: #00e6ff;
-			color: #181c20;
-		}
-		.social-btn.github {
-			background: #181c20;
-			color: #fff;
-		}
-		.social-btn.github:hover {
-			background: #24292e;
-			color: #00e6ff;
-		}
-		.social-btn.facebook {
-			background: #1877f3;
-			color: #fff;
-		}
-		.social-btn.facebook:hover {
-			background: #fff;
-			color: #1877f3;
-		}
-		.social-btn.telegram {
-			background: #229ed9;
-			color: #fff;
-		}
-		.social-btn.telegram:hover {
-			background: #fff;
-			color: #229ed9;
-		}
-		.social-btn.discord {
-			background: #5865f2;
-			color: #fff;
-		}
-		.social-btn.discord:hover {
-			background: #fff;
-			color: #5865f2;
-		}
-		/* Alternate color style */
-		.social-btn.alt {
-			filter: brightness(0.92) contrast(1.15) saturate(1.2);
-			box-shadow: 0 2px 8px rgba(0,230,255,0.13);
-		}
-		.portfolio-btn {
-			margin-top: 18px;
-			background: #fff;
-			color: #181c20;
-			border: 2px solid #00e6ff;
-			font-size: 1.1rem;
-			font-weight: 700;
-			padding: 12px 32px;
-			border-radius: 8px;
-			text-decoration: none;
-			transition: background 0.18s, color 0.18s, border 0.18s;
-		}
-		.portfolio-btn {
-			margin-top: 18px;
-			background: linear-gradient(90deg, #00e6ff 0%, #229ed9 100%);
-			color: #101217;
-			border: 2px solid #229ed9;
-			font-size: 1.1rem;
-			font-weight: 700;
-			padding: 12px 32px;
-			border-radius: 8px;
-			text-decoration: none;
-			transition: background 0.18s, color 0.18s, border 0.18s;
-			z-index: 2;
-			box-shadow: 0 2px 12px rgba(0,230,255,0.10);
-		}
-		.portfolio-btn:hover {
-			background: #229ed9;
-			color: #fff;
-			border: 2px solid #00e6ff;
-		}
-			pointer-events: none;
-			user-select: none;
-		}
+		.social-btn:active { transform: translateY(1px); }
+		.social-btn.email { background: #23272b; color: #00e6ff; }
+		.social-btn.email:hover { background: #00e6ff; color: #181c20; }
+		.social-btn.github { background: #181c20; color: #fff; }
+		.social-btn.github:hover { background: #24292e; color: #00e6ff; }
+		.social-btn.facebook { background: #1877f3; color: #fff; }
+		.social-btn.facebook:hover { background: #fff; color: #1877f3; }
+		.social-btn.telegram { background: #229ed9; color: #fff; }
+		.social-btn.telegram:hover { background: #fff; color: #229ed9; }
+		.social-btn.discord { background: #5865f2; color: #fff; }
+		.social-btn.discord:hover { background: #fff; color: #5865f2; }
+		.social-btn.alt { filter: brightness(0.92) contrast(1.15) saturate(1.2); }
+		/* Signature */
 		.signature {
 			position: fixed;
 			right: 32px;
 			bottom: 24px;
-			z-index: 100;
+			z-index: 120;
 			text-align: right;
 			color: #00e6ff;
 			opacity: 0.45;
@@ -149,29 +101,9 @@
 			user-select: none;
 			min-width: 60px;
 		}
-		.signature .sig-initials {
-			font-family: 'Montserrat', Arial, sans-serif;
-			font-size: 1.1rem;
-			letter-spacing: 2px;
-			line-height: 1;
-			color: #00e6ff;
-			text-shadow: 0 1px 4px #101217, 0 1px 0 #fff2;
-			font-weight: 700;
-		}
-		.signature .sig-name {
-			font-family: 'Montserrat', Arial, sans-serif;
-			font-size: 0.525rem;
-			color: #b0eaff;
-			letter-spacing: 1px;
-			margin-top: -2px;
-			display: block;
-			font-weight: 400;
-		}
-		@media (max-width: 600px) {
-			.signature { right: 10px; bottom: 8px; }
-			.signature .sig-initials { font-size: 0.55rem; }
-			.signature .sig-name { font-size: 0.35rem; }
-		}
+		.signature .sig-initials { font-family: 'Montserrat', Arial, sans-serif; font-size: 1.1rem; letter-spacing: 2px; line-height: 1; color: #00e6ff; font-weight: 700; }
+		.signature .sig-name { font-family: 'Montserrat', Arial, sans-serif; font-size: 0.525rem; color: #b0eaff; margin-top: -2px; display:block; font-weight:400; }
+		@media (max-width: 600px) { .logo { width: 180px; } .signature { right: 10px; bottom: 8px; } .signature .sig-initials { font-size: 0.55rem; } .signature .sig-name { font-size: 0.35rem; } }
 	</style>
 	<!-- Font Awesome for icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -186,11 +118,11 @@
 			<a href="https://t.me/ton0fun" class="social-btn telegram alt" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
 			<a href="https://discord.com/users/yourdiscordid" class="social-btn discord" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
 		</div>
-		<a href="portfolio.html" class="portfolio-btn">Portfolio</a>
+		
+		<div class="signature">
+			<div class="sig-initials">ZM</div>
+			<span class="sig-name">Zachary Maronek</span>
+		</div>
 	</div>
-</body>
-	<div class="signature">
-		<div class="sig-initials">ZM</div>
-		<span class="sig-name">Zachary Maronek</span>
-	</div>
+	</body>
 </html>
